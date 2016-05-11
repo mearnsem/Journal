@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		4082D99D1CE3D7860062BB26 /* Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4082D99C1CE3D7860062BB26 /* Entry.swift */; };
 		4082D99F1CE3D95D0062BB26 /* EntryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4082D99E1CE3D95D0062BB26 /* EntryController.swift */; };
+		4082D9A11CE3DDD60062BB26 /* EntryListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4082D9A01CE3DDD60062BB26 /* EntryListTableViewController.swift */; };
+		4082D9A51CE3E2970062BB26 /* EntryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4082D9A41CE3E2970062BB26 /* EntryDetailViewController.swift */; };
 		68816AC81BBB5405000569CE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68816AC71BBB5405000569CE /* AppDelegate.swift */; };
 		68816ACD1BBB5405000569CE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 68816ACB1BBB5405000569CE /* Main.storyboard */; };
 		68816ACF1BBB5405000569CE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 68816ACE1BBB5405000569CE /* Assets.xcassets */; };
@@ -37,6 +39,8 @@
 /* Begin PBXFileReference section */
 		4082D99C1CE3D7860062BB26 /* Entry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Entry.swift; sourceTree = "<group>"; };
 		4082D99E1CE3D95D0062BB26 /* EntryController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntryController.swift; sourceTree = "<group>"; };
+		4082D9A01CE3DDD60062BB26 /* EntryListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntryListTableViewController.swift; sourceTree = "<group>"; };
+		4082D9A41CE3E2970062BB26 /* EntryDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntryDetailViewController.swift; sourceTree = "<group>"; };
 		68816AC41BBB5405000569CE /* Journal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Journal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		68816AC71BBB5405000569CE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		68816ACC1BBB5405000569CE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -99,9 +103,11 @@
 		68816AC61BBB5405000569CE /* Journal */ = {
 			isa = PBXGroup;
 			children = (
+				68816AC71BBB5405000569CE /* AppDelegate.swift */,
 				4082D99C1CE3D7860062BB26 /* Entry.swift */,
 				4082D99E1CE3D95D0062BB26 /* EntryController.swift */,
-				68816AC71BBB5405000569CE /* AppDelegate.swift */,
+				4082D9A41CE3E2970062BB26 /* EntryDetailViewController.swift */,
+				4082D9A01CE3DDD60062BB26 /* EntryListTableViewController.swift */,
 				68816ACB1BBB5405000569CE /* Main.storyboard */,
 				68816ACE1BBB5405000569CE /* Assets.xcassets */,
 				68816AD01BBB5405000569CE /* LaunchScreen.storyboard */,
@@ -260,6 +266,8 @@
 			files = (
 				4082D99F1CE3D95D0062BB26 /* EntryController.swift in Sources */,
 				4082D99D1CE3D7860062BB26 /* Entry.swift in Sources */,
+				4082D9A11CE3DDD60062BB26 /* EntryListTableViewController.swift in Sources */,
+				4082D9A51CE3E2970062BB26 /* EntryDetailViewController.swift in Sources */,
 				68816AC81BBB5405000569CE /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

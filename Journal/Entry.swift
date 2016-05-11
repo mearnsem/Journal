@@ -9,11 +9,11 @@
 import Foundation
 
 class Entry: Equatable {
-    var timestamp: String
+    var timestamp: NSDate
     var title: String
     var bodyText: String
     
-    init(timestamp: String, title: String, bodyText: String) {
+    init(timestamp: NSDate, title: String, bodyText: String) {
         self.timestamp = timestamp
         self.title = title
         self.bodyText = bodyText

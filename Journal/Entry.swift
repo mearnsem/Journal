@@ -18,6 +18,12 @@ class Entry: Equatable {
         self.title = title
         self.bodyText = bodyText
     }
+    
+    //Write a dictionaryCopy function that returns a Dictionary with keys and values matching the properties of the object.
+    
+//    func dictionaryCopy {
+//        
+//    }
 }
 
 func ==(lhs: Entry, rhs: Entry) -> Bool {

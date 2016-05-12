@@ -8,22 +8,28 @@
 
 import UIKit
 
-class EntryDetailViewController: UIViewController {
+class EntryDetailViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate {
 
     @IBOutlet weak var entryTitleTextField: UITextField!
     @IBOutlet weak var bodyTextView: UITextView!
-    
     
     var entry: Entry?
     
     func updateWith(entry: Entry) {
         title = entry.title
-//        bodyText = entry.bodyText
-//        timestamp = entry.timestamp
+        bodyTextView.text = entry.bodyText
+    }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        self.entryTitleTextField.endEditing(true)
+        return false
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        entryTitleTextField.delegate = self
+        bodyTextView.delegate = self
         
         if let entry = entry {
             updateWith(entry)
@@ -33,7 +39,21 @@ class EntryDetailViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
+    
+    //MARK: - IBActions
+    
+    @IBAction func clearTextButtonPressed(sender: AnyObject) {
+        
+    }
 
+    @IBAction func saveButtonPressed(sender: AnyObject) {
+        if let entry = entry {
+            updateWith(entry)
+        } else {
+            
+        }
+    }
+    
     /*
     // MARK: - Navigation
 

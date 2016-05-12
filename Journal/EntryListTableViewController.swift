@@ -57,13 +57,10 @@ class EntryListTableViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == .Delete {
-            // Delete the row from the data source
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
             let entry = EntryController.sharedController.entries[indexPath.row]
-            EntryController.sharedController.addEntry(entry)
-        }    
+            EntryController.sharedController.removeEntry(entry)
+        }
     }
     
 
@@ -86,7 +83,12 @@ class EntryListTableViewController: UITableViewController {
     // MARK: - Navigation
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        
+        if segue.identifier == "toAddEntry", let entryListVC = segue.destinationViewController as? EntryDetailViewController, let entryCell = sender as? UITableViewCell, let indexPath = tableView.indexPathForCell(entryCell) {
+            entryListVC.entry = EntryController.sharedController.entries[indexPath.row]
+        }
+        if segue.identifier == "toViewEntry", let entryListVC = segue.destinationViewController as? EntryDetailViewController, let entryCell = sender as? UITableViewCell, let indexPath = tableView.indexPathForCell(entryCell) {
+            entryListVC.entry = EntryController.sharedController.entries[indexPath.row].
+        }
     }
     
 

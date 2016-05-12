@@ -22,7 +22,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="LHv-Ww-fK6" kind="show" identifier="toEntryDetailEdit" id="kHg-ZJ-av9"/>
+                                    <segue destination="LHv-Ww-fK6" kind="show" identifier="toViewEntry" id="kHg-ZJ-av9"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -35,7 +35,7 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Sch-ao-RlL">
                             <connections>
                                 <action selector="addButtonTapped:" destination="ypM-0D-Taw" id="xI5-yc-JgG"/>
-                                <segue destination="LHv-Ww-fK6" kind="show" identifier="toEntryDetailAdd" id="jiK-DV-KLr"/>
+                                <segue destination="LHv-Ww-fK6" kind="show" identifier="toAddEntry" id="jiK-DV-KLr"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -56,34 +56,46 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9Zu-C5-I7H">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Entry title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9Zu-C5-I7H">
                                 <rect key="frame" x="20" y="72" width="560" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Mwr-FP-DTq">
-                                <rect key="frame" x="20" y="125" width="560" height="135"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Mwr-FP-DTq">
+                                <rect key="frame" x="20" y="125" width="560" height="354"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="904-hq-PMe">
+                                <rect key="frame" x="282" y="502" width="36" height="30"/>
+                                <state key="normal" title="Clear"/>
+                                <connections>
+                                    <action selector="clearTextButtonPressed:" destination="LHv-Ww-fK6" eventType="touchUpInside" id="CWN-Th-EiE"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="Mwr-FP-DTq" secondAttribute="trailing" id="OEA-V3-XBZ"/>
+                            <constraint firstItem="904-hq-PMe" firstAttribute="centerX" secondItem="T3c-FU-N8s" secondAttribute="centerX" id="THo-e4-Wc1"/>
+                            <constraint firstItem="904-hq-PMe" firstAttribute="top" secondItem="Mwr-FP-DTq" secondAttribute="bottom" constant="23" id="a92-V9-Hc0"/>
                             <constraint firstAttribute="leadingMargin" secondItem="Mwr-FP-DTq" secondAttribute="leading" id="eRh-92-ODY"/>
                             <constraint firstItem="9Zu-C5-I7H" firstAttribute="top" secondItem="5xd-6r-mdE" secondAttribute="bottom" constant="8" id="fWW-oW-O8j"/>
                             <constraint firstItem="Mwr-FP-DTq" firstAttribute="top" secondItem="9Zu-C5-I7H" secondAttribute="bottom" constant="23" id="jTj-Q7-zGw"/>
                             <constraint firstAttribute="leadingMargin" secondItem="9Zu-C5-I7H" secondAttribute="leading" id="tUJ-9I-ytt"/>
+                            <constraint firstItem="usw-eX-0sa" firstAttribute="top" secondItem="904-hq-PMe" secondAttribute="bottom" constant="24" id="xOV-hf-a4o"/>
                             <constraint firstAttribute="trailingMargin" secondItem="9Zu-C5-I7H" secondAttribute="trailing" id="yt7-qp-fVa"/>
                         </constraints>
                     </view>
-                    <toolbarItems>
-                        <barButtonItem systemItem="cancel" id="xYP-WT-OyF"/>
-                    </toolbarItems>
+                    <toolbarItems/>
                     <navigationItem key="navigationItem" id="psY-sY-OuZ">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="41y-0p-8Mt"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="41y-0p-8Mt">
+                            <connections>
+                                <action selector="saveButtonPressed:" destination="LHv-Ww-fK6" id="Nvg-7y-2BI"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>

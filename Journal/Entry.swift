@@ -9,9 +9,18 @@
 import Foundation
 
 class Entry: Equatable {
+    
+    private let timestampKey = "timestamp"
+    private let titleKey = "title"
+    private let bodyTextKey = "bodyText"
+    
     var timestamp: NSDate
     var title: String
     var bodyText: String
+    
+    var dictionaryCopy: [String: AnyObject] {
+        return [timestampKey: timestamp, titleKey: title, bodyTextKey: bodyText]
+    }
     
     init(timestamp: NSDate, title: String, bodyText: String) {
         self.timestamp = timestamp
@@ -19,11 +28,15 @@ class Entry: Equatable {
         self.bodyText = bodyText
     }
     
-    //Write a dictionaryCopy function that returns a Dictionary with keys and values matching the properties of the object.
+    init?(dictionary: [String: AnyObject]) {
+        guard let timestamp = dictionary[timestampKey] as? NSDate, title = dictionary[titleKey] as? String, bodyText = dictionary[bodyTextKey] as? String else {
+            return nil
+        }
+        self.timestamp = timestamp
+        self.title = title
+        self.bodyText = bodyText
+    }
     
-//    func dictionaryCopy {
-//        
-//    }
 }
 
 func ==(lhs: Entry, rhs: Entry) -> Bool {

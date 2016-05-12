@@ -16,7 +16,7 @@ class EntryDetailViewController: UIViewController, UITextFieldDelegate, UITextVi
     var entry: Entry?
     
     func updateWith(entry: Entry) {
-        title = entry.title
+        entryTitleTextField.text = entry.title
         bodyTextView.text = entry.bodyText
     }
     
@@ -43,25 +43,22 @@ class EntryDetailViewController: UIViewController, UITextFieldDelegate, UITextVi
     //MARK: - IBActions
     
     @IBAction func clearTextButtonPressed(sender: AnyObject) {
-        
+        entryTitleTextField.text = ""
+        bodyTextView.text = ""
     }
 
     @IBAction func saveButtonPressed(sender: AnyObject) {
         if let entry = entry {
             updateWith(entry)
         } else {
-            
+            guard let title = entryTitleTextField.text, bodyText = bodyTextView.text else {
+                return
+            }
+            let entry = Entry(timestamp: NSDate(), title: title, bodyText: bodyText)
+            EntryController.sharedController.addEntry(entry)
         }
+        self.navigationController?.popViewControllerAnimated(true)
+        
     }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

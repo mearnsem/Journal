@@ -49,7 +49,12 @@ class EntryDetailViewController: UIViewController, UITextFieldDelegate, UITextVi
 
     @IBAction func saveButtonPressed(sender: AnyObject) {
         if let entry = entry {
-            updateWith(entry)
+            guard let title = entryTitleTextField.text, bodyTextView = bodyTextView.text else {
+                return
+            }
+            entry.title = title
+            entry.bodyText = bodyTextView
+            EntryController.sharedController.saveToPersistentStorage()
         } else {
             guard let title = entryTitleTextField.text, bodyText = bodyTextView.text else {
                 return

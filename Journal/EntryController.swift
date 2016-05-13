@@ -35,6 +35,7 @@ class EntryController {
     func updateEntry(entry: Entry) {
         removeEntry(entry)
         addEntry(entry)
+        
     }
     
     func removeEntry(entry: Entry) {

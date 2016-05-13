@@ -103,7 +103,6 @@
 		68816AC61BBB5405000569CE /* Journal */ = {
 			isa = PBXGroup;
 			children = (
-				68816AC71BBB5405000569CE /* AppDelegate.swift */,
 				4082D99C1CE3D7860062BB26 /* Entry.swift */,
 				4082D99E1CE3D95D0062BB26 /* EntryController.swift */,
 				4082D9A41CE3E2970062BB26 /* EntryDetailViewController.swift */,
@@ -111,6 +110,7 @@
 				68816ACB1BBB5405000569CE /* Main.storyboard */,
 				68816ACE1BBB5405000569CE /* Assets.xcassets */,
 				68816AD01BBB5405000569CE /* LaunchScreen.storyboard */,
+				68816AC71BBB5405000569CE /* AppDelegate.swift */,
 				68816AD31BBB5405000569CE /* Info.plist */,
 			);
 			path = Journal;

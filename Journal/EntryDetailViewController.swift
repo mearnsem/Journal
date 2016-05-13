@@ -27,7 +27,7 @@ class EntryDetailViewController: UIViewController, UITextFieldDelegate, UITextVi
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         entryTitleTextField.delegate = self
         bodyTextView.delegate = self
         
